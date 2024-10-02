@@ -1,26 +1,31 @@
 package com.practice.pojo;
 
-import java.util.List;
-import com.practice.tax.*;
+public class Product {
+    private String name;
+    private double price;
+    private boolean isExempted;
+    private boolean isImported;
 
-public abstract class Product {
-	protected String name;
-	protected double price;
-	public boolean isImported;
+    public Product(String name, double price, boolean isExempted, boolean isImported) {
+        this.name = name;
+        this.price = price;
+        this.isExempted = isExempted;
+        this.isImported = isImported;
+    }
 
-	public Product(String name, double price, boolean isImported) {
-		this.name = name;
-		this.price = price;
-		this.isImported = isImported;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public abstract double calculatePriceWithTax(List<TaxCalculator> taxCalculators);
+    public double getPrice() {
+        return price;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public boolean isExempted() {
+        return isExempted;
+    }
 
-	public double getPrice() {
-		return price;
-	}
+    public boolean isImported() {
+        return isImported;
+    }
 }
